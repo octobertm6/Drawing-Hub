@@ -24,6 +24,7 @@ Run it anywhere. A small window lists the games:
 | **Draw Me!** | Draws the player you're drawing (head or whole avatar) onto your canvas | `RightShift` |
 | **Hide In Paintings** | Paints your figure to match the painting behind it, and shows where your opponent is hiding | `RightShift` |
 | **WELDING Bricklayer** | Launches any player into the air with a brick, orbits pieces around you, deletes your loose pieces | `RightShift` |
+| **Chameleon!** | Paints your character as an exact copy of the wall behind you; as seeker, highlights enemies through walls and rapid-fires the shotgun | `K` |
 
 ### Free Draw / Spray Paint!
 
@@ -44,6 +45,14 @@ Run it anywhere. A small window lists the games:
 - **Launch** (`L`): pick a player in the list (you're at the top) and press Launch. A brick (you) or steel plate (anyone else) slides under their feet, rises at **Speed** for **Rise time**, then drops into the void so they keep flying up.
 - **Orbit** (`O`): pieces circle you and fling whoever they hit. It keeps spawning every item type (bricks, plates, boards, planks, beams, glass, windows) until the server won't spawn any more, and **Bring nearby loose parts** adds anyone's non-cemented pieces lying near you. Turning it off sends your pieces into the void and drops other people's.
 - **Delete my loose pieces** (click twice): removes every loose piece of yours for everyone. Cemented pieces can only be broken with the game's hammer.
+
+### Chameleon!
+
+- **Camouflage me** (`C`): back up against a wall and press it. Every spot on your body is painted with the exact wall pixel behind it (wallpaper patterns, custom materials, decals, textures), through the game's own painter, so everyone sees it. **Detail** sets how fine the dots are (128 default; 192–256 is sharper but slower), **Brightness %** evens out lighting.
+- **Show enemies** (`G`): outlines every enemy through walls (hiders when you seek, seekers when you hide).
+- **Rapid fire**: hold click to keep the shotgun firing at the fastest rate the server accepts (**Shot delay**, about 0.6 s). The window counts shots the server accepted.
+- **Shoot through walls**: shots start up to 18 studs closer to the enemy nearest your crosshair (**Aim radius**). The server limits how far a shot may start from you, so it only reaches enemies close by.
+- The game's own hider keys are `V`, `F` (lock in place), `E`, `Q` and `R`. If you can't move, press `F` to unlock.
 
 ## Notes
 
