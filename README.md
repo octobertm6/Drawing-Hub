@@ -1,6 +1,6 @@
 # Drawing Hub
 
-One script that auto-draws any image in Roblox drawing games. Paste a picture link, press Draw.
+One script for Roblox drawing and painting games: auto-draw any picture, paint any player's avatar, or blend in perfectly.
 
 ## Load it
 
@@ -10,7 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/octobertm6/Drawing-Hu
 
 Run it anywhere. A small window lists the games:
 
-- **In one of the games already?** Its drawing tool opens by itself.
+- **In one of the games already?** Its tool opens by itself.
 - **Somewhere else?** Press **Join game** on a card. It teleports you there and opens the tool when you arrive.
 
 `RightCtrl` shows or hides the hub window.
@@ -19,19 +19,26 @@ Run it anywhere. A small window lists the games:
 
 | Game | What it does | Window key |
 | --- | --- | --- |
-| **Free Draw** | Draws the picture as parts on the big floor canvas | `RightShift` |
-| **Spray Paint!** | Sprays the picture onto walls with the game's own spray can | `RightShift` |
-| **Paint to Get Rich** | Paints the picture onto your easel (open your easel first) | `RightShift` |
+| **Free Draw** | Draws a picture as parts on the big floor canvas | `RightShift` |
+| **Spray Paint!** | Sprays a picture, text or any player's avatar onto walls with the game's own spray can | `RightShift` |
+| **Draw Me!** | Draws the player you're drawing (head or whole avatar) onto your canvas | `RightShift` |
+| **Hide In Paintings** | Paints your figure to match the painting behind it, and shows where your opponent is hiding | `RightShift` |
 
-### How to draw
+### Free Draw / Spray Paint!
 
 1. Paste a direct link to an image (png, jpg, webp or gif).
-2. Press **Preview** to see what it will look like.
-3. Press **Draw** (Free Draw / Paint to Get Rich) or **Place** then **Paint!** (Spray Paint!).
-4. **Stop** pauses. Pressing Draw again carries on where it stopped.
+   In Spray Paint! you can also use the **Text** tab, or the **Avatar** tab: type a username or display name and it loads that player's avatar (full body, upper body or head).
+2. Press **Preview** / **Load** to see what it will look like.
+3. Press **Draw** (Free Draw) or **Place** then **Paint!** (Spray Paint!).
+4. **Stop** pauses. Pressing Draw / Paint! again carries on where it stopped.
+
+### Hide In Paintings
+
+- **Blend In** (`B`): move into your spot, press it, then press the game's Submit. Your whole figure takes the exact colours of the painting behind it.
+- **Undo blend**: puts your previous paint back.
+- **Show opponent** (`V`): while you seek, your opponent's hidden figure gets a pulsing outline. Only you can see it.
 
 ## Notes
 
 - Some games (Free Draw) don't allow teleporting from other creators' games. If **Join** says so, open that game from the Roblox app and run the script there.
-- Your executor needs `request`, `writefile`, `getcustomasset` and `queue_on_teleport` (most do).
-- **Paint to Get Rich:** the server drops strokes sent faster than about 60 per second, so keep **Strokes/s** at 60 or lower or the picture gets holes.
+- Your executor needs `request`, `writefile`, `getcustomasset`, `getconnections` and `queue_on_teleport` (most do).
