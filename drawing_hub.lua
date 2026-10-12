@@ -90,14 +90,16 @@ end
 
 ----------------------------------------------------------------------------------------------------
 -- Launcher: join the game if we're somewhere else, and re-run this script after the teleport.
--- The script is expected at <executor workspace>/free_draw.lua (readfile); keep it there.
+-- After the teleport it re-runs from <executor workspace>/free_draw.lua if present, else from GitHub.
 ----------------------------------------------------------------------------------------------------
 local TARGET_PLACE_ID = 72039880963188
 local SCRIPT_FILE = "free_draw.lua"
 -- When launched from the drawing hub bundle, the hub supplies code that relaunches the whole bundle instead.
 local launcherEnv: any = if type(getgenv) == "function" then getgenv() else _G
+-- Standalone: the local copy if there is one, otherwise this script's copy on GitHub.
+local SCRIPT_URL = "https://raw.githubusercontent.com/octobertm6/Drawing-Hub/main/scripts/free_draw.lua"
 local RELAUNCH = launcherEnv.__DRAW_HUB_RELAUNCH
-	or `if type(isfile) == "function" and isfile("{SCRIPT_FILE}") then loadstring(readfile("{SCRIPT_FILE}"), "free_draw")() else warn("[FreeDraw] {SCRIPT_FILE} not found in the executor workspace; run the script again") end`
+	or `local src = if type(isfile) == "function" and isfile("{SCRIPT_FILE}") then readfile("{SCRIPT_FILE}") else game:HttpGet("{SCRIPT_URL}"); loadstring(src, "free_draw")()`
 
 local function teleportToGame()
 	local queue = if type(queue_on_teleport) == "function" then queue_on_teleport
